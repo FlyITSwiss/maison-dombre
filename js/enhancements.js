@@ -484,3 +484,51 @@ if (document.readyState === 'loading') {
 } else {
     initEnhancements();
 }
+
+// ==========================================
+// LEGAL MODALS
+// ==========================================
+function initLegalModals() {
+    // Close modal on button click
+    document.querySelectorAll('.legal-close').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const modal = btn.closest('.legal-modal');
+            modal.classList.remove('active');
+            history.pushState('', document.title, window.location.pathname);
+        });
+    });
+
+    // Close modal on backdrop click
+    document.querySelectorAll('.legal-modal').forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                history.pushState('', document.title, window.location.pathname);
+            }
+        });
+    });
+
+    // Open modal from data-modal links
+    document.querySelectorAll('[data-modal]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalId = link.getAttribute('href').replace('#', '');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+            }
+        });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.legal-modal.active').forEach(modal => {
+                modal.classList.remove('active');
+            });
+        }
+    });
+}
+
+// Add to init
+document.addEventListener('DOMContentLoaded', initLegalModals);

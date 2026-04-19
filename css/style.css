@@ -2357,3 +2357,168 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.5);
 }
+
+/* ==========================================
+   FOOTER LEGAL & CREDIT
+   ========================================== */
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-legal {
+    text-align: center;
+}
+
+.footer-legal-links {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.footer-legal-links a {
+    color: rgba(255, 255, 255, 0.5) !important;
+    transition: color 0.3s ease;
+}
+
+.footer-legal-links a:hover {
+    color: #9B4D2B !important;
+}
+
+.footer-legal-links span {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-credit {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.footer-credit a {
+    color: #9B4D2B !important;
+    text-decoration: none;
+}
+
+.footer-credit a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   LEGAL MODALS
+   ========================================== */
+.legal-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 2rem;
+}
+
+.legal-modal:target,
+.legal-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.legal-modal-content {
+    background: #FDFBF7;
+    color: #1A1A1A;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 3rem;
+    border-radius: 12px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.legal-modal:target .legal-modal-content,
+.legal-modal.active .legal-modal-content {
+    transform: translateY(0);
+}
+
+.legal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.legal-close:hover {
+    background: #9B4D2B;
+    color: #FFFFFF;
+}
+
+.legal-modal-content h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #1A1A1A;
+}
+
+.legal-modal-content h3 {
+    font-size: 1.1rem;
+    margin: 1.5rem 0 0.75rem;
+    color: #9B4D2B;
+}
+
+.legal-modal-content p,
+.legal-modal-content li {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4A5568;
+}
+
+.legal-modal-content ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.legal-modal-content li {
+    margin-bottom: 0.5rem;
+    list-style: disc;
+}
+
+.legal-modal-content a {
+    color: #9B4D2B;
+}
+
+@media (max-width: 768px) {
+    .legal-modal-content {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .footer-legal-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .footer-legal-links span {
+        display: none;
+    }
+}

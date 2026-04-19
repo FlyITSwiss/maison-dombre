@@ -812,3 +812,174 @@
 .luxury-underline.active::after {
     width: 100%;
 }
+
+/* ==========================================
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   ========================================== */
+
+/* GPU Acceleration for smooth transforms */
+.hero-cta .btn,
+.nav,
+.card-3d-reveal .card-inner,
+.image-reveal img,
+.split-text .char,
+.marquee-track {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Contain layout for performance */
+.section,
+.expertise-card,
+.testimonial-card,
+.gallery-item {
+    contain: layout style;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+    /* === DISABLE HEAVY EFFECTS === */
+
+    /* Disable grain overlay (very expensive on mobile GPU) */
+    .grain-overlay {
+        display: none !important;
+    }
+
+    /* Disable morphing blobs */
+    .morphing-blob,
+    .morphing-blobs {
+        display: none !important;
+    }
+
+    /* Remove backdrop-filter (expensive) */
+    .hero-cta .btn-primary,
+    .hero-cta .btn-secondary,
+    .marquee-container .client-logo {
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+    }
+
+    /* Simplify scroll progress animation */
+    .scroll-progress {
+        animation: none;
+        background: #9B4D2B;
+    }
+
+    /* === SIMPLIFY 3D ANIMATIONS === */
+    .card-3d-reveal {
+        perspective: none;
+    }
+
+    .card-3d-reveal .card-inner {
+        transform: translateY(20px) !important;
+        transition-duration: 0.5s;
+    }
+
+    .card-3d-reveal.revealed .card-inner {
+        transform: translateY(0) !important;
+    }
+
+    .card-3d-reveal .card-inner:hover {
+        transform: translateY(-5px) !important;
+    }
+
+    /* Simplify split text animation */
+    .split-text .char {
+        transform: translateY(30px) !important;
+        transition-duration: 0.4s;
+    }
+
+    .split-text.revealed .char {
+        transform: translateY(0) !important;
+    }
+
+    /* Faster marquee on mobile */
+    .marquee-track {
+        animation-duration: 25s;
+    }
+
+    /* Disable hover transforms on touch */
+    .expertise-card:hover,
+    .testimonial-card:hover,
+    .gallery-item:hover {
+        transform: none !important;
+    }
+
+    /* Simplify clip-path animations */
+    .image-reveal img,
+    .clip-reveal {
+        transition-duration: 0.8s;
+    }
+}
+
+/* Tablet optimizations */
+@media (max-width: 1024px) and (min-width: 769px) {
+    /* Reduce blob complexity */
+    .morphing-blob {
+        width: 400px;
+        height: 400px;
+        filter: blur(80px);
+        animation-duration: 30s;
+    }
+
+    /* Simpler floating elements */
+    .floating-shape {
+        animation-duration: 40s;
+        filter: blur(120px);
+    }
+
+    /* Lighter grain on tablet */
+    .grain-overlay {
+        opacity: 0.02;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Disable hover effects on touch devices */
+    .hero-cta .btn-primary:hover,
+    .hero-cta .btn-secondary:hover {
+        transform: none !important;
+    }
+
+    /* Disable magnetic zones */
+    .magnetic-zone {
+        transition: none !important;
+    }
+
+    /* Disable glow pulse (battery drain) */
+    .glow-pulse {
+        animation: none !important;
+    }
+
+    /* Disable parallax on touch */
+    .floating-elements {
+        display: none;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .morphing-blob,
+    .marquee-track,
+    .floating-shape,
+    .glow-pulse {
+        animation: none !important;
+    }
+
+    .split-text .char,
+    .card-3d-reveal .card-inner,
+    .image-reveal img,
+    .clip-reveal {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
+    }
+
+    .preloader {
+        display: none !important;
+    }
+}

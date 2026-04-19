@@ -4,6 +4,41 @@
    ========================================== */
 
 // ==========================================
+// MOBILE PERFORMANCE UTILITIES
+// ==========================================
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                 window.innerWidth < 768 ||
+                 ('ontouchstart' in window);
+
+const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Throttle function for scroll events
+function throttle(func, limit) {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+// RequestAnimationFrame-based throttle for smoother animations
+function rafThrottle(func) {
+    let ticking = false;
+    return function(...args) {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                func.apply(this, args);
+                ticking = false;
+            });
+            ticking = true;
+        }
+    };
+}
+
+// ==========================================
 // 1. PRELOADER
 // ==========================================
 function initPreloader() {
@@ -38,7 +73,9 @@ function initScrollProgress() {
         progressBar.style.width = `${progress}%`;
     }
 
-    window.addEventListener('scroll', updateProgress, { passive: true });
+    // Use RAF throttle for smooth 60fps updates
+    const throttledUpdate = rafThrottle(updateProgress);
+    window.addEventListener('scroll', throttledUpdate, { passive: true });
     updateProgress();
 }
 
@@ -108,8 +145,11 @@ function initFloatingElements() {
     const floatingContainer = document.querySelector('.floating-elements');
     if (!floatingContainer) return;
 
-    // Mouse parallax on floating elements
-    document.addEventListener('mousemove', (e) => {
+    // Skip parallax on mobile/touch devices (performance)
+    if (isMobile || isReducedMotion) return;
+
+    // Mouse parallax on floating elements (throttled)
+    const handleMouseMove = rafThrottle((e) => {
         const x = (e.clientX / window.innerWidth - 0.5) * 2;
         const y = (e.clientY / window.innerHeight - 0.5) * 2;
 
@@ -124,6 +164,8 @@ function initFloatingElements() {
             });
         });
     });
+
+    document.addEventListener('mousemove', handleMouseMove, { passive: true });
 }
 
 // ==========================================
@@ -372,6 +414,9 @@ function initEnhancements() {
 // 11. GRAIN TEXTURE OVERLAY
 // ==========================================
 function initGrainOverlay() {
+    // Skip grain on mobile (expensive effect)
+    if (isMobile) return;
+
     // Create grain overlay element
     const grain = document.createElement('div');
     grain.className = 'grain-overlay';
@@ -410,6 +455,9 @@ function initSplitText() {
 // 13. MORPHING BLOBS
 // ==========================================
 function initMorphingBlobs() {
+    // Skip blobs on mobile (expensive animation)
+    if (isMobile || isReducedMotion) return;
+
     const hero = document.querySelector('.hero');
     if (!hero) return;
 

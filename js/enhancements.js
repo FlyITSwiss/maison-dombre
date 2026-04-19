@@ -358,7 +358,124 @@ function initEnhancements() {
     initLiquidButtons();
     initEnhancedReveals();
 
-    console.log('✨ Maison d\'Ombre - Premium Enhancements Loaded');
+    // New premium features
+    initGrainOverlay();
+    initSplitText();
+    initImageReveals();
+    initCard3DReveals();
+    initMorphingBlobs();
+
+    console.log('✨ Maison d\'Ombre - Ultra Premium Enhancements Loaded');
+}
+
+// ==========================================
+// 11. GRAIN TEXTURE OVERLAY
+// ==========================================
+function initGrainOverlay() {
+    // Create grain overlay element
+    const grain = document.createElement('div');
+    grain.className = 'grain-overlay';
+    grain.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(grain);
+}
+
+// ==========================================
+// 12. SPLIT TEXT ANIMATION
+// ==========================================
+function initSplitText() {
+    const splitElements = document.querySelectorAll('.hero-title .title-line');
+
+    splitElements.forEach(el => {
+        const text = el.textContent;
+        el.innerHTML = '';
+        el.classList.add('split-text');
+
+        // Split into characters
+        text.split('').forEach((char, index) => {
+            const span = document.createElement('span');
+            span.className = 'char';
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            span.style.setProperty('--char-index', index);
+            el.appendChild(span);
+        });
+
+        // Trigger reveal after preloader
+        setTimeout(() => {
+            el.classList.add('revealed');
+        }, 2800 + (Array.from(splitElements).indexOf(el) * 200));
+    });
+}
+
+// ==========================================
+// 13. MORPHING BLOBS
+// ==========================================
+function initMorphingBlobs() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    // Add morphing blobs to hero
+    const blobContainer = document.createElement('div');
+    blobContainer.className = 'morphing-blobs';
+    blobContainer.style.cssText = 'position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;';
+
+    for (let i = 0; i < 3; i++) {
+        const blob = document.createElement('div');
+        blob.className = 'morphing-blob';
+        blob.style.cssText = `
+            position: absolute;
+            ${i === 0 ? 'top: -20%; left: -10%;' : ''}
+            ${i === 1 ? 'top: 30%; right: -15%;' : ''}
+            ${i === 2 ? 'bottom: -10%; left: 30%;' : ''}
+        `;
+        blobContainer.appendChild(blob);
+    }
+
+    hero.insertBefore(blobContainer, hero.firstChild);
+}
+
+// ==========================================
+// 14. IMAGE REVEAL MASKS
+// ==========================================
+function initImageReveals() {
+    const galleryItems = document.querySelectorAll('.gallery-image');
+
+    galleryItems.forEach((item, index) => {
+        item.classList.add('image-reveal');
+        // Alternate between reveal types
+        if (index % 3 === 1) item.classList.add('diagonal');
+        if (index % 3 === 2) item.classList.add('circle');
+
+        ScrollTrigger.create({
+            trigger: item,
+            start: 'top 85%',
+            onEnter: () => item.classList.add('revealed'),
+            once: true
+        });
+    });
+}
+
+// ==========================================
+// 15. STAGGERED 3D CARD REVEALS
+// ==========================================
+function initCard3DReveals() {
+    const featureCards = document.querySelectorAll('.feature-card');
+    const expertiseCards = document.querySelectorAll('.expertise-card');
+
+    [...featureCards, ...expertiseCards].forEach((card, index) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'card-3d-reveal';
+        card.parentNode.insertBefore(wrapper, card);
+        wrapper.appendChild(card);
+        card.classList.add('card-inner');
+        card.style.setProperty('--card-index', index % 4);
+
+        ScrollTrigger.create({
+            trigger: wrapper,
+            start: 'top 85%',
+            onEnter: () => wrapper.classList.add('revealed'),
+            once: true
+        });
+    });
 }
 
 // Wait for DOM and GSAP

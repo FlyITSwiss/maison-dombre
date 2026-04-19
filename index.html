@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maison d'Ombre - Spécialiste de l'ombrage de luxe au Maroc. Toiles tendues, pergolas bioclimatiques et parasols design pour hôtels de prestige.">
+    <meta name="keywords" content="ombrage luxe, toiles tendues, pergolas, parasols, Maroc, hôtels, Oberoi, Selman">
+    <meta property="og:title" content="Maison d'Ombre - L'art de l'ombre, le confort du soleil">
+    <meta property="og:description" content="Solutions d'ombrage sur mesure pour les plus grands hôtels du Maroc.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maison-dombre.ma">
+    <meta property="og:image" content="https://maison-dombre.ma/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="fr_MA">
+    <meta property="og:site_name" content="Maison d'Ombre">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Maison d'Ombre - L'art de l'ombre, le confort du soleil">
+    <meta name="twitter:description" content="Solutions d'ombrage sur mesure pour les plus grands hôtels du Maroc.">
+    <meta name="twitter:image" content="https://maison-dombre.ma/img/og-image.jpg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://maison-dombre.ma">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#9B4D2B">
+    <meta name="msapplication-TileColor" content="#9B4D2B">
+
+    <title>Maison d'Ombre | L'art de l'ombre, le confort du soleil</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- GSAP Animation Suite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhancements.css">
+</head>
+<body>
+    <!-- PRELOADER CINEMATIQUE -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">Maison <span class="accent">d'Ombre</span></div>
+        <div class="preloader-bar"><div class="preloader-progress"></div></div>
+        <div class="preloader-text">Chargement</div>
+    </div>
+    <!-- SCROLL PROGRESS BAR -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <!-- PAGE TRANSITION -->
+    <div class="page-transition"><div class="page-transition-layer"></div></div>
+    <!-- Skip to content (accessibility) -->
+    <a href="#hero" class="skip-link">Aller au contenu principal</a>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor">
+        <div class="cursor-dot"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-text">Maison d'Ombre</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#realisations">Réalisations</a></li>
+                <li><a href="#pourquoi">Pourquoi nous</a></li>
+                <li><a href="#processus">Processus</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero aurora-bg" id="hero">
+        <!-- FLOATING ELEMENTS -->
+        <div class="floating-elements">
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+        </div>
+        <div class="hero-bg">
+            <img src="img/projects/project-2.jpg" alt="Voile d'ombrage luxe Marrakech - Maison d'Ombre" class="hero-bg-img">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1 class="hero-title" id="heroTitle">
+                <span class="title-line">Maison</span>
+                <span class="title-line accent">d'Ombre</span>
+            </h1>
+            <p class="hero-tagline" id="heroTagline">L'art de l'ombre, le confort du soleil</p>
+            <p class="hero-subtitle" id="heroSubtitle">
+                Solutions d'ombrage sur mesure pour les plus grands hôtels du Maroc
+            </p>
+            <div class="hero-cta" id="heroCta">
+                <a href="#contact" class="btn btn-primary">
+                    <span>Demander un devis</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#realisations" class="btn btn-secondary">Voir nos projets</a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" id="scrollIndicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Découvrir</span>
+        </div>
+    </section>
+
+    <!-- Parallax Section 1 -->
+    <section class="parallax-section">
+        <div class="parallax-img-container">
+            <img src="img/parallax-2.jpg" alt="Architecture luxe contemporaine" class="parallax-img">
+        </div>
+        <div class="parallax-content">
+            <span class="parallax-label">15+ années d'excellence</span>
+            <h2>Des espaces d'exception<br>pour des lieux d'exception</h2>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="section expertise" id="expertise">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Notre savoir-faire</span>
+                <h2 class="section-title">Trois expertises,<br><span class="accent">une passion</span></h2>
+                <p class="section-subtitle">Chaque projet est une création unique, pensée pour sublimer votre espace</p>
+            </div>
+
+            <div class="expertise-grid">
+                <!-- Toiles Tendues -->
+                <article class="expertise-card" data-expertise="toiles">
+                    <div class="expertise-image">
+                        <img src="img/projects/project-4.jpg" alt="Toiles tendues design" loading="lazy">
+                        <div class="expertise-overlay"></div>
+                    </div>
+                    <div class="expertise-content">
+                        <h3>Toiles Tendues</h3>
+                        <p>Des voiles architecturales sur mesure qui sculptent l'ombre et créent des espaces de vie uniques.</p>
+                        <ul class="expertise-features">
+                            <li>Conception sur mesure</li>
+                            <li>Résistance UV & intempéries</li>
+                            <li>Installation professionnelle</li>
+                        </ul>
+                        <a href="#contact" class="expertise-link">
+                            <span>En savoir plus</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Pergolas -->
+                <article class="expertise-card" data-expertise="pergolas">
+                    <div class="expertise-image">
+                        <img src="img/projects/project-8.jpg" alt="Pergolas bioclimatiques" loading="lazy">
+                        <div class="expertise-overlay"></div>
+                    </div>
+                    <div class="expertise-content">
+                        <h3>Pergolas Bioclimatiques</h3>
+                        <p>Des structures élégantes aux lames orientables pour un confort optimal en toute saison.</p>
+                        <ul class="expertise-features">
+                            <li>Lames orientables 0-135°</li>
+                            <li>Aluminium haute qualité</li>
+                            <li>Options motorisées</li>
+                        </ul>
+                        <a href="#contact" class="expertise-link">
+                            <span>En savoir plus</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Parasols -->
+                <article class="expertise-card" data-expertise="parasols">
+                    <div class="expertise-image">
+                        <img src="img/projects/project-12.jpg" alt="Parasols design" loading="lazy">
+                        <div class="expertise-overlay"></div>
+                    </div>
+                    <div class="expertise-content">
+                        <h3>Parasols Design</h3>
+                        <p>Des parasols haut de gamme alliant esthétique contemporaine et fonctionnalité.</p>
+                        <ul class="expertise-features">
+                            <li>Grandes dimensions</li>
+                            <li>Toiles techniques</li>
+                            <li>Design exclusif</li>
+                        </ul>
+                        <a href="#contact" class="expertise-link">
+                            <span>En savoir plus</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section 2 -->
+    <section class="parallax-section">
+        <div class="parallax-img-container">
+            <img src="img/hero-final.jpg" alt="Architecture contemporaine de luxe" class="parallax-img">
+        </div>
+        <div class="parallax-content">
+            <span class="parallax-label">Craftsmanship</span>
+            <h2>La précision du sur-mesure<br>au service de votre vision</h2>
+        </div>
+    </section>
+
+    <!-- Réalisations Section -->
+    <section class="section realisations" id="realisations">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">Nos <span class="accent">réalisations</span></h2>
+                <p class="section-subtitle">Découvrez nos projets d'exception à travers le Maroc</p>
+            </div>
+
+            <!-- Filter -->
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="toiles">Toiles</button>
+                <button class="filter-btn" data-filter="pergolas">Pergolas</button>
+                <button class="filter-btn" data-filter="parasols">Parasols</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <div class="gallery-item large" data-category="toiles">
+                    <div class="gallery-image">
+                        <img src="img/projects/project-2.jpg" alt="The Oberoi Marrakech" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h4>The Oberoi</h4>
+                                <p>Toiles tendues piscine</p>
+                                <span class="gallery-location">Marrakech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="toiles">
+                    <div class="gallery-image">
+                        <img src="img/projects/project-6.jpg" alt="Radisson Blu" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h4>Radisson Blu</h4>
+                                <p>Installation terrasse</p>
+                                <span class="gallery-location">Marrakech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="pergolas">
+                    <div class="gallery-image">
+                        <img src="img/projects/project-7.jpg" alt="Selman Palace" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h4>Selman Palace</h4>
+                                <p>Pergola grand format</p>
+                                <span class="gallery-location">Marrakech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item tall" data-category="toiles">
+                    <div class="gallery-image">
+                        <img src="img/projects/project-9.jpg" alt="Les 2 Tours" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h4>Les 2 Tours</h4>
+                                <p>Voiles architecturales</p>
+                                <span class="gallery-location">Marrakech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="toiles">
+                    <div class="gallery-image">
+                        <img src="img/projects/project-21.jpg" alt="Villa Sidi Kaouki" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h4>Villa Sidi Kaouki</h4>
+                                <p>Voiles vue mer</p>
+                                <span class="gallery-location">Essaouira</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="toiles">
+                    <div class="gallery-image">
+                        <img src="img/projects/project-4.jpg" alt="Le Medley" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h4>Le Medley</h4>
+                                <p>Terrasse rooftop</p>
+                                <span class="gallery-location">M Avenue</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="pergolas">
+                    <div class="gallery-image">
+                        <img src="img/projects/project-8.jpg" alt="Domaine Privé" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h4>Domaine Privé</h4>
+                                <p>Pergolas multiples</p>
+                                <span class="gallery-location">Palmeraie</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item large" data-category="toiles">
+                    <div class="gallery-image">
+                        <img src="img/projects/project-19.jpg" alt="Four Seasons" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h4>Four Seasons</h4>
+                                <p>Installation complète</p>
+                                <span class="gallery-location">Marrakech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="toiles">
+                    <div class="gallery-image">
+                        <img src="img/projects/project-5.jpg" alt="Villa Essaouira" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h4>Villa Essaouira</h4>
+                                <p>Voile architecturale</p>
+                                <span class="gallery-location">Essaouira</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section 3 -->
+    <section class="parallax-section dark">
+        <div class="parallax-img-container">
+            <img src="img/shade-sail-2.jpg" alt="Architecture contemporaine bois" class="parallax-img">
+        </div>
+        <div class="parallax-content">
+            <span class="parallax-label">Qualité Premium</span>
+            <h2>Des matériaux d'excellence<br>pour une durabilité sans compromis</h2>
+        </div>
+    </section>
+
+    <!-- Pourquoi Nous Section -->
+    <section class="section pourquoi" id="pourquoi">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Nos engagements</span>
+                <h2 class="section-title">Pourquoi choisir<br><span class="accent">Maison d'Ombre</span></h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    <div class="feature-number">15+</div>
+                    <h3>Années d'expérience</h3>
+                    <p>Une expertise reconnue dans tout le Maroc, avec des centaines de projets réalisés avec succès.</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-number">100%</div>
+                    <h3>Sur-mesure</h3>
+                    <p>Chaque projet est unique. Nous concevons des solutions parfaitement adaptées à votre espace.</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-number">500+</div>
+                    <h3>Projets livrés</h3>
+                    <p>Des hôtels de prestige aux villas privées, nous accompagnons les plus exigeants.</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-number">10</div>
+                    <h3>Ans de garantie</h3>
+                    <p>Matériaux premium certifiés, structures durables et service après-vente réactif.</p>
+                </div>
+            </div>
+
+            <!-- Clients de prestige -->
+            <div class="clients-section">
+                <p class="clients-title">Ils nous font confiance</p>
+                <div class="marquee-container">
+                    <div class="marquee-track" data-direction="left">
+                        <div class="marquee-content">
+                    <!-- The Oberoi - Luxury Indian brand -->
+                    <div class="client-logo" data-hotel="oberoi">
+                        <svg class="hotel-logo" viewBox="0 0 160 60" fill="currentColor">
+                            <text x="80" y="28" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="400" letter-spacing="6">THE</text>
+                            <text x="80" y="48" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="400" letter-spacing="4">OBEROI</text>
+                        </svg>
+                        <span class="client-location">Marrakech</span>
+                    </div>
+
+                    <!-- Four Seasons - Classic luxury -->
+                    <div class="client-logo" data-hotel="fourseasons">
+                        <svg class="hotel-logo" viewBox="0 0 160 60" fill="currentColor">
+                            <text x="80" y="28" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-weight="400" letter-spacing="3">FOUR SEASONS</text>
+                            <text x="80" y="46" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-weight="400" letter-spacing="2">RESORT MARRAKECH</text>
+                        </svg>
+                        <span class="client-location">Marrakech</span>
+                    </div>
+
+                    <!-- Selman Palace -->
+                    <div class="client-logo" data-hotel="selman">
+                        <svg class="hotel-logo" viewBox="0 0 160 60" fill="currentColor">
+                            <text x="80" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="400" letter-spacing="5" font-style="italic">SELMAN</text>
+                            <text x="80" y="48" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" font-weight="400" letter-spacing="3">MARRAKECH</text>
+                        </svg>
+                        <span class="client-location">Marrakech</span>
+                    </div>
+
+                    <!-- Radisson Blu -->
+                    <div class="client-logo" data-hotel="radisson">
+                        <svg class="hotel-logo" viewBox="0 0 160 60" fill="currentColor">
+                            <text x="80" y="28" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="14" font-weight="600" letter-spacing="2">RADISSON</text>
+                            <text x="80" y="46" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="12" font-weight="400" letter-spacing="1" fill="#0072BB">BLU</text>
+                        </svg>
+                        <span class="client-location">Marrakech</span>
+                    </div>
+
+                    <!-- Les Jardins des Douars -->
+                    <div class="client-logo" data-hotel="jardins">
+                        <svg class="hotel-logo" viewBox="0 0 160 60" fill="currentColor">
+                            <text x="80" y="22" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-weight="400" letter-spacing="2">LES JARDINS</text>
+                            <text x="80" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-weight="400" letter-spacing="2">DES</text>
+                            <text x="80" y="54" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-weight="400" letter-spacing="3" font-style="italic">DOUARS</text>
+                        </svg>
+                        <span class="client-location">Essaouira</span>
+                    </div>
+
+                    <!-- Le Medley -->
+                    <div class="client-logo" data-hotel="medley">
+                        <svg class="hotel-logo" viewBox="0 0 160 60" fill="currentColor">
+                            <text x="80" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="400" letter-spacing="4" font-style="italic">LE MEDLEY</text>
+                            <text x="80" y="48" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="8" font-weight="500" letter-spacing="3">M AVENUE</text>
+                        </svg>
+                        <span class="client-location">Marrakech</span>
+                    </div>
+
+                    <!-- Les 2 Tours -->
+                    <div class="client-logo" data-hotel="deuxtours">
+                        <svg class="hotel-logo" viewBox="0 0 160 60" fill="currentColor">
+                            <text x="80" y="28" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="400" letter-spacing="2">LES</text>
+                            <text x="80" y="48" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="600" letter-spacing="3">2 TOURS</text>
+                        </svg>
+                        <span class="client-location">Marrakech</span>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages Section -->
+    <section class="section testimonials" id="temoignages">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Témoignages</span>
+                <h2 class="section-title">Ce que disent<br><span class="accent">nos clients</span></h2>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">"</div>
+                        <p>Un travail remarquable ! L'équipe a parfaitement compris notre vision. La pergola bioclimatique a transformé notre terrasse en véritable oasis.</p>
+                        <div class="testimonial-author">
+                            <div>
+                                <strong>Direction Générale</strong>
+                                <span>The Oberoi, Marrakech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">"</div>
+                        <p>Professionnalisme exemplaire du début à la fin. Les toiles tendues ont apporté une touche contemporaine à notre hôtel tout en offrant un confort optimal.</p>
+                        <div class="testimonial-author">
+                            <div>
+                                <strong>Directrice d'hôtel</strong>
+                                <span>Les Jardins des Douars, Essaouira</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">"</div>
+                        <p>Je recommande vivement Maison d'Ombre. Leur expertise et leur écoute ont fait toute la différence. Notre terrasse est devenue l'attraction principale !</p>
+                        <div class="testimonial-author">
+                            <div>
+                                <strong>Propriétaire</strong>
+                                <span>Le Medley, M Avenue</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-nav">
+                <button class="testimonial-prev" aria-label="Précédent">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <div class="testimonials-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="testimonial-next" aria-label="Suivant">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processus Section -->
+    <section class="section processus" id="processus">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Notre méthode</span>
+                <h2 class="section-title">Un projet en<br><span class="accent">4 étapes</span></h2>
+                <p class="section-subtitle">De votre idée à sa réalisation, nous vous guidons</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step" data-step="1">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Consultation</h3>
+                        <p>Échange sur vos besoins, visite sur site et prise de mesures précises.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-step="2">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Conception</h3>
+                        <p>Création des plans 3D, choix des matériaux et validation du design.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-step="3">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Fabrication</h3>
+                        <p>Production sur mesure dans nos ateliers avec des matériaux premium.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-step="4">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Installation</h3>
+                        <p>Pose professionnelle par nos équipes et mise en service complète.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="contact-bg">
+            <img src="img/shade-sail-1.jpg" alt="Contact Maison d'Ombre" class="contact-bg-img">
+            <div class="contact-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="section-header light">
+                        <span class="section-label">Contact</span>
+                        <h2 class="section-title">Parlons de<br><span class="accent">votre projet</span></h2>
+                        <p class="section-subtitle">Prêt à transformer votre espace ? Contactez-nous pour un devis gratuit.</p>
+                    </div>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Téléphone</strong>
+                                <a href="tel:+212600000000">+212 6 00 00 00 00</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <path d="M22 6l-10 7L2 6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:contact@maison-dombre.ma">contact@maison-dombre.ma</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Adresse</strong>
+                                <span>Marrakech, Maroc</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Instagram</strong>
+                                <a href="https://instagram.com/maison.dombre" target="_blank">@maison.dombre</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" name="name" required placeholder="Votre nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+212 6 XX XX XX XX">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project">Type de projet</label>
+                        <select id="project" name="project" required>
+                            <option value="">Sélectionnez...</option>
+                            <option value="toile">Toile tendue</option>
+                            <option value="pergola">Pergola bioclimatique</option>
+                            <option value="parasol">Parasol design</option>
+                            <option value="autre">Autre projet</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Votre message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Décrivez votre projet..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Envoyer ma demande</span>
+                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <span class="logo-text">Maison d'Ombre</span>
+                    </a>
+                    <p>L'art de l'ombre, le confort du soleil.<br>Spécialiste de l'ombrage de luxe au Maroc depuis 2009.</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/maison.dombre" target="_blank" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#expertise">Notre expertise</a></li>
+                        <li><a href="#realisations">Réalisations</a></li>
+                        <li><a href="#pourquoi">Pourquoi nous</a></li>
+                        <li><a href="#processus">Notre processus</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Toiles tendues</a></li>
+                        <li><a href="#">Pergolas bioclimatiques</a></li>
+                        <li><a href="#">Parasols design</a></li>
+                        <li><a href="#">Entretien & SAV</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Zones d'intervention</h4>
+                    <ul>
+                        <li>Marrakech</li>
+                        <li>Casablanca</li>
+                        <li>Rabat</li>
+                        <li>Essaouira</li>
+                        <li>Agadir</li>
+                        <li>Tanger</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Maison d'Ombre. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DARK MODE TOGGLE -->
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Basculer le mode sombre">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/212600000000?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20un%20projet%20d%27ombrage."
+       class="whatsapp-float"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contactez-nous sur WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span class="tooltip">Discutons de votre projet</span>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/enhancements.js"></script>
+</body>
+</html>
